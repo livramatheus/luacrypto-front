@@ -1,0 +1,1114 @@
+/*--CORE--*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+:root {
+    --primarycolor: #3852FC;
+    --secondarycolor: #07C754;
+    --mainbgcolor: #F8F9FD;
+    --secondarybgcolor: #43444D;
+    --secondarybghovercolor: #4e515c;
+    --lighttxtcolor: #A4A6B3;
+    --darktxtcolor: #252733;
+    --detailcolor: #DFE0EB;
+    --moneygreencolor: #3ebb68;
+    --moneyredcolor: #ff4b41;
+    --background-main: none;
+    --background-main-light: none;
+    --background-main-code: 245, 244, 247;
+    --border-radius: 8px;
+}
+
+::-moz-selection {
+    color: var(--secondarybgcolor);
+    background: var(--secondarycolor);
+}
+
+::selection {
+    color: var(--secondarybgcolor);
+    background: var(--secondarycolor);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: mulish, sans-serif;
+    color: var(--darktxtcolor);
+}
+
+body {
+    background-color: var(--mainbgcolor);
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--detailcolor);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondarybgcolor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondarybghovercolor);
+}
+
+/*Text*/
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin: 1em 0 1em 0;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+.color-text {
+    color: var(--secondarycolor);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/*Forms*/
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input, button, select, textarea {
+    padding: 0.7rem;
+    border: 1px solid var(--detailcolor);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primarycolor);
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+.readonly {
+    background-color: #eeeeee;
+}
+
+.readonly:focus {
+    border: 1px solid #b5b5b5;
+}
+
+/*Links*/
+
+.link, .link:visited {
+    color: var(--primarycolor);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.paginacao a {
+    text-decoration: none;
+}
+
+/* Tabela Principal */
+.linha-tabela img {
+    height: 2rem;
+}
+
+.linha-tabela {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.ez-info span {
+    display: none;
+}
+
+.tabela-moedas-resp {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tabela-moedas-resp-dados {
+    display: flex;
+    gap: 1rem;
+}
+
+.tabela-moedas-resp-dados > * { 
+    width: 50%;
+}
+
+.tabela-moedas-resp-dados > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.table-number {
+    display: flex;
+    justify-content: right;
+}
+
+.tabela-moedas-resp-graph {
+    display: flex;
+    justify-content: center;
+}
+
+.ez-footer {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/*Card*/
+
+#card-group {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.card-main {
+    border-radius: 8px;
+    border: 1px solid var(--detailcolor);
+    width: 19.4%;
+    min-width: 10rem;
+    height: 7rem;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-close {
+    position: relative !important;
+    top: 0.2rem !important;
+    right: 0.2rem !important;
+    float: right;
+    z-index: 4;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 20px;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.card-add {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.card-add-icon path {
+    color: #9FA2B4;
+    transition: color 0.3s;
+}
+
+.card-close-icon path {
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #9FA2B4;
+}
+
+.card-main:hover .card-close-icon path {
+    opacity: 1;
+}
+
+.card-data, .card-data-add {
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.card-data-add {
+    font-size: 2.5rem;
+    color: #9FA2B4;
+}
+
+.card-main:hover, .card-component-clickable:hover, .select-fiat:hover {
+    border-color: var(--primarycolor);
+    box-shadow: 0px 0px 6px 1px #e6e6e6;
+}
+
+.card-title, .card-title-add {
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.card-title-add {
+    color: #9FA2B4;
+}
+
+.card-main:hover .card-title, .card-main:hover .card-title-add, .card-main:hover .card-data, .card-main:hover .card-add-icon>path, .card-component-clickable:hover *, .select-fiat:hover div {
+    color: var(--primarycolor);
+}
+
+/*--LAYOUT--*/
+
+#dash {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#menu {
+    background-color: var(--secondarybgcolor);
+    width: 17%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#logo {
+    height: 6rem;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+    padding: 1.2rem;
+}
+
+.menu-item {
+    color: var(--lighttxtcolor);
+    height: 3rem;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    padding: 0 1rem 0 1rem;
+    background-repeat: no-repeat;
+    background-position-x: 1.5rem;
+    background-position-y: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-item svg path {
+    color: var(--lighttxtcolor);
+}
+
+.menu-section a, #status a, .dropdown-content a {
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background-color: var(--secondarybghovercolor);
+    border-left: 3px solid #F7F8FC;
+}
+
+#data {
+    height: 100%;
+    width: 83%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#top-row {
+    display: flex;
+    flex-direction: flex-row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#top-row div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    line-height: 1.5rem;
+    font-size: 0.85rem;
+    column-gap: 0.4rem;
+}
+
+#top-row hr {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#control {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.ico {
+    cursor: pointer;
+}
+
+.ico path {
+    color: var(--lighttxtcolor);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#status {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/*Cards*/
+
+#card-component-group {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card-component {
+    border: 1px solid var(--detailcolor);
+    width: 50%;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.card-component-clickable {
+    text-decoration: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-component-clickable * {
+    transition: color 0.3s
+}
+
+.card-component-center {
+    display: flex;
+    justify-content: center !important;
+}
+
+.detail-body-center {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card-component-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.coluna-acoes {
+    width: 6rem;
+}
+
+.card-component-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#content {
+    height: fit-content;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.data-content tbody {
+    font-weight: 600;
+}
+
+.bullet {
+    border-radius: 50px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.bullet:hover {
+    box-shadow: 0px 0px 6px 1px #dddddd;
+}
+
+.acao {
+    color: #9FA2B4;
+    cursor: pointer;
+}
+
+.botao-form-cadastro button {
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.botoes-confirmacao button:hover, .botao-form-cadastro button:hover {
+    box-shadow: 0px 0px 6px 1px #e6e6e6;
+}
+
+/*Dropdown*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    background-color: var(--secondarybgcolor);
+    color: var(--lighttxtcolor);
+    min-width: 10rem;
+    box-shadow: 0px 0px 6px 1px #dddddd;
+    z-index: 1;
+    left: calc(100% - 10em);
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a:visited {
+    color: var(--lighttxtcolor);
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: var(--lighttxtcolor);
+    padding: 1rem;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondarybghovercolor);
+    border-left: 3px solid #F7F8FC;
+}
+
+.img-thumb {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem 0 0 0;
+    border: 3px double var(--detailcolor);
+}
+
+.page-title {
+    display: flex;
+    width: 100%;
+}
+
+/*Coin data*/
+
+#coin-data-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#coin-data-title h1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+#coin-data-title img {
+    width: 1em;
+}
+
+#coin-data-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.data-content-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.grafico-etf {
+    width: 80%;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.item-dado-etf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bottom-dado-etf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.etf-bubble-big-text {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    text-align: center;
+}
+
+.etf-bubble-light-text {
+    color: var(--lighttxtcolor);
+}
+
+.data-etf {
+    width: 20%;
+}
+
+.grafico-moeda {
+    width: 66%;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+#toggle-grafico {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#toggle-grafico:hover {
+    opacity: 1;
+}
+
+#toggle-grafico button {
+    padding: 1px 4px 1px 4px;
+}
+
+.wrapper-grafico-cotacao {
+    width: 100%;
+}
+
+.wrapper-grafico-medo-ganancia {
+    width: 80%;
+}
+
+.data-moeda {
+    width: 17%;
+}
+
+.logo-e-botao {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+/*Footer*/
+
+#footer {
+    border-top: 1px solid var(--detailcolor);
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-section {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-footer {
+    background-repeat: no-repeat;
+    background-size: 35%;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.footer-column a {
+    font-size: 0.8rem;
+    display: flex;
+    text-decoration: none;
+}
+
+.footer-column h4 {
+    padding-bottom: 0.5rem;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Medo e Ganancia */
+
+#medo-e-ganancia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.historico-medo-ganancia {
+    display: flex;
+    justify-content: center;
+}
+
+.indice-grupo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.indice-atual {
+    font-size: 4rem;
+    line-height: 5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.desc-indice-atual {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.indice-outer {
+    width: 80%;
+    height: 4rem;
+    background-color: var(--secondarybgcolor);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 2px;
+}
+
+.indice-inner {
+    height: 100%;
+    transition: width 2s ease;
+}
+
+.percent-up {
+    color: var(--moneygreencolor);
+}
+
+.percent-down {
+    color: var(--moneyredcolor);
+}
+
+/* Search Bar */
+
+.popover-pesquisa .pesquisa {
+    padding: 1rem;
+}
+
+.pesquisa {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resultado-pesquisa {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.resultado-pesquisa a {
+    text-decoration: none;
+}
+
+.item-pesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+}
+
+.item-pesquisa img {
+    width: 1.5rem;
+    display: flex;
+}
+
+/* Pesquisa */
+
+#no-coin-found {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#no-coin-found h4 {
+    text-align: center;
+}
+
+#no-coin-found div {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    display: flex;
+    height: 10rem;
+}
+
+/* Ticker */
+
+.content-ticker {
+    width: 100%;
+    border-radius: 8px;
+    height: fit-content;
+    padding-top: 1.5rem;
+}
+
+.content-ticker div:nth-child(1) {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content-ticker div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+}
+
+.content-ticker::-webkit-scrollbar {
+    width: 10px;
+}
+
+.content-ticker::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Handle */
+
+.content-ticker::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+
+.content-ticker::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.content-ticker::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Etf */
+
+.bubble-etf-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.bubble-etf-content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bubble-etf-content-dados {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem
+}
+
+.bubble-etf-content-dados div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Chart tooltip */
+
+.tooltip-chart {
+    background-color: var(--mainbgcolor);
+    padding: 1rem 2rem 0.5rem 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.body-tooltip {
+    max-width: 20rem;
+    background: var(--mainbgcolor);
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.08);
+}
+
+.data-linebreak {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-noticia-recente {
+    display: flex;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Lista destaque */
+.lista-destaque a, .lista-destaque span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    height: 1.4rem;
+    gap: 0.5rem;
+}
+
+.lista-destaque {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lista-destaque .dados-cotacao {
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+}
+
+.lista-destaque .dados-gerais {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.lista-destaque img {
+    height: 1.3rem;
+}
+
+/* Selecionar fiat */
+
+.grid-fiat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.select-fiat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 8px;
+    width: 28%;
+    height: 4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.fiat-img {
+    width: 20px;
+}
+
+.fiat-img img {
+    width: 100%;
+}
+
+.content-nome {
+    font-weight: bold;
+}
+
+/* Global Data */
+
+.global-data {
+    font-size: 0.1rem;
+}
+
+.global-data div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.gwei-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 1024px) {
+    #coin-data-content {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .item-dado-etf {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .data-content-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: space-between;
+    }
+    
+    .data-moeda, .grafico-moeda {
+        width: 100%;
+    }
+
+    .logo-e-botao {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    #dash {
+        flex-direction: column;
+    }
+    #top-row {
+        align-items: flex-start;
+    }
+    #top-row hr {
+        display: none;
+    }
+    .wrapper-grafico-medo-ganancia {
+        width: 100%;
+    }
+    #top-row .global-data {
+        width: 80%;
+    }
+    #top-row .icons {
+        width: 20%;
+    }
+    #top-row .icons {
+        justify-content: flex-end;
+    }
+    .data-etf, .grafico-etf {
+        width: 100%;
+    }
+    #top-row div {
+        width: 100%;
+    }
+    #coin-data-title h1 {
+        font-size: 1.2rem;
+    }
+    #menu {
+        width: 100%;
+        align-items: center;
+        min-height: fit-content;
+    }
+    #data {
+        width: 100%;
+    }
+    .menu-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #content {
+        padding: 0.8rem;
+    }
+
+    .card-close-icon path {
+        opacity: 1;
+    }
+
+    .menu-item:hover {
+        border-left: 3px solid rgba(0, 0, 0, 0);
+    }
+    #card-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .card-main {
+        width: 47%;
+        height: 9rem;
+    }
+    #footer {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .footer-section {
+        width: 100%;
+    }
+    .logo-footer {
+        background-size: contain;
+        height: 3rem;
+    }
+    #card-component-group {
+        flex-direction: column;
+    }
+    #card-component-group .card-component {
+        width: 100%;
+    }
+    .lista-destaque a {
+        flex-direction: column;
+    }
+
+}
